@@ -2,7 +2,7 @@ from django.db import models
 
 
 # Create your models here.
-class People(models.Model):
+class Person(models.Model):
     DOCUMENT_TYPES = (
         ('CC', 'Cedula de Ciudadania'),
         ('TI', 'Tarjeta de Identidad'),
@@ -11,4 +11,4 @@ class People(models.Model):
     document_id = models.CharField(max_length=10)
     name = models.CharField(max_length=200)
     lastname = models.CharField(max_length=200)
-    hobbie = models.CharField(max_length=200)
+    hobbies = models.CharField(max_length=200)
