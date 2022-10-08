@@ -8,7 +8,7 @@ class Person(models.Model):
         ('TI', 'Tarjeta de Identidad'),
     )
     document_type = models.CharField(max_length=2, choices=DOCUMENT_TYPES)
-    document_id = models.CharField(max_length=10)
+    document_id = models.CharField(max_length=10, unique=True)
     name = models.CharField(max_length=200)
     lastname = models.CharField(max_length=200)
     hobbies = models.CharField(max_length=200)
