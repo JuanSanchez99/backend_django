@@ -14,7 +14,6 @@ from pathlib import Path
 import dj_database_url
 import os
 
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -89,7 +88,7 @@ WSGI_APPLICATION = 'back.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 DATABASES = {
     'default': {
-        dj_database_url.config()
+        dj_database_url.config(default='postgresql://postgres:postgres@localhost:5432/mysite', conn_max_age=600)
     }
 }
 
@@ -127,7 +126,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-if not DEBUG:    # Tell Django to copy statics to the `staticfiles` directory
+if not DEBUG:  # Tell Django to copy statics to the `staticfiles` directory
     # in your application directory on Render.
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
     # Turn on WhiteNoise storage backend that takes care of compressing static files
