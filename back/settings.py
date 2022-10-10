@@ -62,6 +62,7 @@ MIDDLEWARE = [
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
     'http://localhost:8000',
+    'https://deluxe-moxie-0291af.netlify.app',
 ]
 
 ROOT_URLCONF = 'back.urls'
